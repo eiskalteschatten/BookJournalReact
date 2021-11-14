@@ -16,19 +16,22 @@ const MainLayout: React.FC = () => {
     <div
       className={clsx({
         [styles.isDarwin]: platform === 'darwin',
+        [styles.mainLayout]: true,
       })}
     >
       {platform === 'darwin' && (<Titlebar />)}
 
       <Sidebar />
 
-      <Routes>
-        <Route path='/' element={
-          <div>
-            right side
-          </div>
-        } />
-      </Routes>
+      <div className={styles.rightSide}>
+        <Routes>
+          <Route path='/' element={
+            <div>
+              right side
+            </div>
+          } />
+        </Routes>
+      </div>
     </div>
   );
 };

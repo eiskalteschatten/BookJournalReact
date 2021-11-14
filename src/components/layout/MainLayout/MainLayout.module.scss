@@ -1,3 +1,11 @@
+.mainLayout {
+  display: flex;
+}
+
 .isDarwin {
   padding-top: 22px;
+}
+
+.rightSide {
+  flex-grow: 1;
 }
