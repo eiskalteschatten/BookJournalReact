@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <IntlProviderWrapper injectedLocale={locale}>
         <HashRouter>
           <Routes>
-            <Route path='/' element={<MainLayout />} />
+            <Route path='*' element={<MainLayout />} />
           </Routes>
         </HashRouter>
       </IntlProviderWrapper>
