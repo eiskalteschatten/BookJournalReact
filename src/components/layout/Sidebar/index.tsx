@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import clsx from 'clsx';
 
 import { State } from '../../../store';
@@ -14,8 +13,7 @@ import styles from './Sidebar.module.scss';
 const Sidebar: React.FC = () => {
   const { pathname } = useLocation();
   const platform = useSelector((state: State) => state.app.platform);
-  const savedSidebarWidth = useSelector((state: State) => state.ui.sidebarWidth);
-  const projectInfo = useSelector((state: State) => state.project.projectInfo);
+  const savedSidebarWidth = useSelector((state: State) => state.ui.width);
   const [sidebarWidth, setSidebarWidth] = useState<number | undefined>(savedSidebarWidth);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
@@ -32,22 +30,6 @@ const Sidebar: React.FC = () => {
       style={{ flex: `0 0 ${sidebarWidth}px` }}
       ref={sidebarRef}
     >
-      <div className={styles.projectInfo}>
-        {projectInfo.image && (
-          <div className={styles.projectImageWrapper}>
-            <img src={`data:${projectInfo.image.mimeType};base64,${projectInfo.image.image}`} className={styles.projectImage} />
-          </div>
-        )}
-
-        {projectInfo.name ? (
-          <div className={styles.projectName}>{projectInfo.name}</div>
-        ) : (
-          <div className={styles.projectName}>
-            <FormattedMessage id='menuNewProject' />
-          </div>
-        )}
-      </div>
-
       <div>
         {sidebarItems.map((item, index: number) => (
           <SidebarItem

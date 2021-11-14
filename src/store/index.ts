@@ -1,7 +1,8 @@
 import { AnyAction, applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk, { ThunkDispatch } from 'redux-thunk';
 
-import app from './reducers/appReducer';
+import app from './app/reducers';
+import ui from './ui/reducers';
 
 const devExtension = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
@@ -9,6 +10,7 @@ const composeEnhancers = devExtension && process.env.NODE_ENV === 'development' 
 
 const reducer = combineReducers({
   app,
+  ui,
 });
 
 const store = createStore(

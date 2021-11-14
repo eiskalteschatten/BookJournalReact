@@ -15,31 +15,3 @@
     background-color: $darkSidebarBgColor;
   }
 }
-
-.projectInfo {
-  display: flex;
-  margin-top: 10px;
-  margin-left: 15px;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.projectImageWrapper {
-  margin-right: 15px;
-
-  $size: 50px;
-  width: $size;
-  height: $size;
-
-  .projectImage {
-    width: $size;
-    height: $size;
-    object-fit: cover;
-    border-radius: 3px;
-  }
-}
-
-.projectName {
-  font-size: 1em;
-  font-weight: bold;
-}

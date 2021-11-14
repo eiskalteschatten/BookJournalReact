@@ -2,7 +2,8 @@ import React, { useCallback, MutableRefObject } from 'react';
 import { useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
 
-import { uiSetSidebarWidth } from '../../../../store/actions/uiActions';
+import { uiSetSidebarWidth } from '../../../../store/ui/actions';
+import { initialState as initialUiState } from '../../../../store/ui/reducers';
 
 import styles from './SidebarDragger.module.scss';
 
@@ -30,7 +31,7 @@ const SidebarDragger: React.FC<Props> = ({ sidebarRef, setSidebarWidth }) => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
       const rect = sidebarRef.current?.getBoundingClientRect();
-      dispatch(uiSetSidebarWidth(rect?.width));
+      dispatch(uiSetSidebarWidth(rect?.width ?? initialUiState.width));
     };
 
     e.preventDefault();
