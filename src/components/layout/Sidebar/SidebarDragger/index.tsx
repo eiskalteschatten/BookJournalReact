@@ -2,31 +2,16 @@ import React, { useCallback, MutableRefObject } from 'react';
 import { useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
 
-import { makeStyles, Theme } from '@material-ui/core/styles';
-
 import { uiSetSidebarWidth } from '../../../../store/actions/uiActions';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  sidebarDragger: {
-    width: 3,
-    height: '100%',
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    cursor: 'ew-resize',
-    '&:hover': {
-      background: theme.palette.primary.main,
-    },
-  },
-}));
+import styles from './SidebarDragger.module.scss';
 
 interface Props {
   sidebarRef: MutableRefObject<HTMLDivElement | null>;
-  setSidebarWidth: Function;
+  setSidebarWidth: (width: number) => void;
 }
 
 const SidebarDragger: React.FC<Props> = ({ sidebarRef, setSidebarWidth }) => {
-  const classes = useStyles();
   const dispatch = useDispatch();
 
   const handleMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -57,7 +42,7 @@ const SidebarDragger: React.FC<Props> = ({ sidebarRef, setSidebarWidth }) => {
 
   return (
     <div
-      className={classes.sidebarDragger}
+      className={styles.sidebarDragger}
       onMouseDown={handleMouseDown}
     />
   );
