@@ -8,7 +8,7 @@ import store from './store';
 import * as serviceWorker from './serviceWorker';
 import './eventsFromMain';
 
-import './index.scss';
+import './scss/index.scss';
 
 ReactDOM.render(
   <React.StrictMode>
