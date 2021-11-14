@@ -11,7 +11,7 @@ export interface UiState {
 }
 
 export const initialState: UiState = {
-  width: 200,
+  width: 235,
 };
 
 const reducer: Reducer<UiState, Actions> = (
