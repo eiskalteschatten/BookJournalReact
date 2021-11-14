@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
@@ -12,7 +11,6 @@ import styles from './Sidebar.module.scss';
 
 const Sidebar: React.FC = () => {
   const sidebarItems = useItems();
-  const { pathname } = useLocation();
   const platform = useSelector((state: State) => state.app.platform);
   const savedSidebarWidth = useSelector((state: State) => state.ui.width);
   const [sidebarWidth, setSidebarWidth] = useState<number | undefined>(savedSidebarWidth);
@@ -35,7 +33,7 @@ const Sidebar: React.FC = () => {
         {sidebarItems.map((item, index: number) => (
           <SidebarItem
             key={index}
-            path={`${pathname}${item.path}`}
+            path={item.path}
             ItemIcon={item.ItemIcon}
             title={item.title}
           />

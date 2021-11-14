@@ -11,7 +11,7 @@ export interface Props {
 }
 
 const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path }) => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   if (path.charAt(path.length -1) === '/') {
     path = path.slice(0, -1);
@@ -22,8 +22,7 @@ const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path }) => {
       to={path}
       className={clsx({
         [styles.sidebarItem]: true,
-        [styles.selected]: location.pathname === path,
-        [styles.selected]: location.pathname === path,
+        [styles.selected]: pathname === path || !path && pathname === '/',
       })}
     >
       <div className={styles.icon}>
