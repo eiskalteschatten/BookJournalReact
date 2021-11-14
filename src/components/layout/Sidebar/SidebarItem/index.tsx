@@ -6,7 +6,7 @@ import styles from './SidebarItem.module.scss';
 
 export interface Props {
   path: string;
-  ItemIcon: any;
+  ItemIcon: React.FunctionComponent;
   title: string;
 }
 
@@ -26,7 +26,10 @@ const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path }) => {
         [styles.selected]: location.pathname === path,
       })}
     >
-      <ItemIcon fontSize='small' className={styles.icon} />
+      <div className={styles.icon}>
+        <ItemIcon />
+      </div>
+
       <span className={styles.text}>{title}</span>
     </Link>
   );
