@@ -3,7 +3,7 @@ import { Props as SidebarItemProp } from './SidebarItem';
 
 import AllBooks from '../../../assets/images/si-glyph-bookcase.svg';
 import WishList from '../../../assets/images/si-glyph-bullet-checked-list.svg';
-import CurrentlyReading from '../../../assets/images/si-glyph-book-open.sv.svg';
+import CurrentlyReading from '../../../assets/images/si-glyph-book-open.svg';
 import NotReadYet from '../../../assets/images/si-glyph-bookmark.svg';
 import BooksRead from '../../../assets/images/si-glyph-square-checked.svg';
 import Statistics from '../../../assets/images/si-glyph-chart-piece.svg';
