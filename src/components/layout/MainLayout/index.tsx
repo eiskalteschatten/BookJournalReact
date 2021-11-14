@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { State } from '../../../store';
 import Titlebar from '../Titlebar';
 import Sidebar from '../Sidebar';
-import Searchbar from '../Searchbar';
+import Searchbar from '../Toolbar';
 
 import AllBooks from '../../../pages/AllBooks';
 
