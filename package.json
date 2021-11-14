@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-typescript",
-  "version": "1.0.0",
-  "description": "A Boilerplate Project for Electron.js, React and TypeScript",
+  "name": "bookjournal",
+  "version": "2.0.0",
+  "description": "A digital book journal.",
   "main": "./public/electron.js",
   "scripts": {
     "build:react": "react-scripts build",
@@ -25,9 +25,9 @@
     "prepare": "husky install"
   },
   "build": {
-    "productName": "ElectronReactTypeScript",
+    "productName": "BookJournal",
     "copyright": "Copyright © 2021 Alex Seifert",
-    "appId": "com.alexseifert.electronReactTypeScript",
+    "appId": "com.alexseifert.bookJournal",
     "buildDependenciesFromSource": true,
     "files": [
       "build"
@@ -59,7 +59,7 @@
       "icon": "build-resources/icon.ico"
     }
   },
-  "repository": "https://github.com/eiskalteschatten/electron-react-typescript.git",
+  "repository": "https://github.com/eiskalteschatten/BookJournalReact.git",
   "keywords": [],
   "author": {
     "name": "Alex Seifert",
