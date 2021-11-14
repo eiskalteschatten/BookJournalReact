@@ -4,7 +4,7 @@ export default {
   // Sidebar
   sidebarAllBooks: 'Alle Bücher',
   sidebarWishlist: 'Wunschliste',
-  sidebarCurrentlyReading: 'Ich lese',
+  sidebarCurrentlyReading: 'Ich lese gerade',
   sidebarNotReadYet: 'Ungelesen',
   sidebarBooksRead: 'Gelesene Bücher',
   sidebarStatistics: 'Statistik',
