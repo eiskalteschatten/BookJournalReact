@@ -28,6 +28,12 @@
     margin-top: 0;
   }
 
+  &.selected {
+    color: $listSelectedDarkBg;
+    background-color: $sidebarBg;
+    border-left: 5px solid $listSelectedDarkBg !important;
+  }
+
   @media (prefers-color-scheme: dark) {
     color: $darkColor;
   }

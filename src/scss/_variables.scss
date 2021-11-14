@@ -6,8 +6,8 @@ $lightColor: #000000;
 $darkBgColor: #222222;
 $darkColor: #f0f0f0;
 
-$lightSidebarBgColor: #f0f0f0;
-$darkSidebarBgColor: #292929;
+$sidebarBg: #000000;
+$sidebarColor: #e0e0e0;
 
 $lightButtonHoverBg: rgba(0, 0, 0, .1);
 $darkButtonHoverBg: rgba(255, 255, 255, .1);
@@ -18,3 +18,6 @@ $darkFormBg: #121212;
 
 $lightBorderColor: rgba(0, 0, 0, 0.23);
 $darkBorderColor: rgba(255, 255, 255, 0.23);
+
+$listSelectedBg: #98bbd4;
+$listSelectedDarkBg: #063353;
