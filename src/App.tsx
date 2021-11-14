@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { IntlProviderWrapper } from './intl/IntlContext';
-import MainLayout from './components/MainLayout';
+import MainLayout from './components/layout/MainLayout';
 import config from './config';
 
 const App: React.FC = () => {

@@ -2,8 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
-import { State } from '../../store';
+import { State } from '../../../store';
 import Titlebar from '../Titlebar';
+import Sidebar from '../Sidebar';
 
 import styles from './MainLayout.module.scss';
 
@@ -18,7 +19,11 @@ const MainLayout: React.FC = () => {
     >
       {platform === 'darwin' && (<Titlebar />)}
 
-      content here
+      <Sidebar />
+
+      <div>
+        right side
+      </div>
     </div>
   );
 };
