@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { State } from '../../../store';
 import Titlebar from '../Titlebar';
 import Sidebar from '../Sidebar';
+import Searchbar from '../Searchbar';
 
 import AllBooks from '../../../pages/AllBooks';
 
@@ -17,23 +18,27 @@ const MainLayout: React.FC = () => {
   return (
     <div
       className={clsx({
-        [styles.isDarwin]: platform === 'darwin',
+        [styles.isDarwin]: platform == 'darwin',
         [styles.mainLayout]: true,
       })}
     >
       {platform === 'darwin' && (<Titlebar />)}
 
-      <Sidebar />
+      <Searchbar />
 
-      <div className={styles.rightSide}>
-        <Routes>
-          <Route path='/' element={<AllBooks />} />
-          <Route path='/wishlist' element={<AllBooks />} />
-          <Route path='/currently-reading' element={<AllBooks />} />
-          <Route path='/not-read-yet' element={<AllBooks />} />
-          <Route path='/books-read' element={<AllBooks />} />
-          <Route path='/statistics' element={<AllBooks />} />
-        </Routes>
+      <div className={styles.columnLayout}>
+        <Sidebar />
+
+        <div className={styles.rightSide}>
+          <Routes>
+            <Route path='/' element={<AllBooks />} />
+            <Route path='/wishlist' element={<AllBooks />} />
+            <Route path='/currently-reading' element={<AllBooks />} />
+            <Route path='/not-read-yet' element={<AllBooks />} />
+            <Route path='/books-read' element={<AllBooks />} />
+            <Route path='/statistics' element={<AllBooks />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
