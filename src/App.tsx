@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import { IntlProviderWrapper } from './intl/IntlContext';
 import MainLayout from './components/layout/MainLayout';
@@ -11,7 +12,11 @@ const App: React.FC = () => {
   return (
     <>
       <IntlProviderWrapper injectedLocale={locale}>
-        <MainLayout />
+        <HashRouter>
+          <Routes>
+            <Route path='/' element={<MainLayout />} />
+          </Routes>
+        </HashRouter>
       </IntlProviderWrapper>
     </>
   );

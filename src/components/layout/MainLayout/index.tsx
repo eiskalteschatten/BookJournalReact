@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { State } from '../../../store';
@@ -21,9 +22,13 @@ const MainLayout: React.FC = () => {
 
       <Sidebar />
 
-      <div>
-        right side
-      </div>
+      <Routes>
+        <Route path='/' element={
+          <div>
+            right side
+          </div>
+        } />
+      </Routes>
     </div>
   );
 };
