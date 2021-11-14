@@ -6,11 +6,12 @@ import clsx from 'clsx';
 import { State } from '../../../store';
 import SidebarItem from './SidebarItem';
 import SidebarDragger from './SidebarDragger';
-import sidebarItems from './items';
+import useItems from './useItems';
 
 import styles from './Sidebar.module.scss';
 
 const Sidebar: React.FC = () => {
+  const sidebarItems = useItems();
   const { pathname } = useLocation();
   const platform = useSelector((state: State) => state.app.platform);
   const savedSidebarWidth = useSelector((state: State) => state.ui.width);

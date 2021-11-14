@@ -8,7 +8,7 @@ import NotReadYet from '../../../assets/images/si-glyph-bookmark.svg';
 import BooksRead from '../../../assets/images/si-glyph-square-checked.svg';
 import Statistics from '../../../assets/images/si-glyph-chart-piece.svg';
 
-const sidebarItems: SidebarItemProp[] = [
+const useItems = (): SidebarItemProp[] => ([
   {
     path: '/',
     ItemIcon: AllBooks,
@@ -45,6 +45,6 @@ const sidebarItems: SidebarItemProp[] = [
     ItemIcon: Statistics,
     title: useTranslation('sidebarStatistics'),
   },
-];
+]);
 
-export default sidebarItems;
+export default useItems;
