@@ -30,6 +30,10 @@
     background-color: $listSelectedDarkBg;
   }
 
+  &.marginBottom {
+    margin-bottom: 25px;
+  }
+
   @media (prefers-color-scheme: dark) {
     color: $darkColor;
   }

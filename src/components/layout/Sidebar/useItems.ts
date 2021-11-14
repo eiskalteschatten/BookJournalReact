@@ -18,10 +18,8 @@ const useItems = (): SidebarItemProp[] => ([
     path: '/wishlist',
     ItemIcon: WishList,
     title: useTranslation('sidebarWishlist'),
+    marginBottom: true,
   },
-  // {
-  //   type: 'spacing',
-  // },
   {
     path: '/currently-reading',
     ItemIcon: CurrentlyReading,
@@ -36,10 +34,8 @@ const useItems = (): SidebarItemProp[] => ([
     path: '/books-read',
     ItemIcon: BooksRead,
     title: useTranslation('sidebarBooksRead'),
+    marginBottom: true,
   },
-  // {
-  //   type: 'spacing',
-  // },
   {
     path: '/statistics',
     ItemIcon: Statistics,

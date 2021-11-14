@@ -33,9 +33,7 @@ const Sidebar: React.FC = () => {
         {sidebarItems.map((item, index: number) => (
           <SidebarItem
             key={index}
-            path={item.path}
-            ItemIcon={item.ItemIcon}
-            title={item.title}
+            {...item}
           />
         ))}
 

@@ -8,9 +8,10 @@ export interface Props {
   path: string;
   ItemIcon: React.FunctionComponent;
   title: string;
+  marginBottom?: boolean;
 }
 
-const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path }) => {
+const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path, marginBottom }) => {
   const { pathname } = useLocation();
 
   if (path.charAt(path.length -1) === '/') {
@@ -23,6 +24,7 @@ const SidebarItem: React.FC<Props> = ({ ItemIcon, title, path }) => {
       className={clsx({
         [styles.sidebarItem]: true,
         [styles.selected]: pathname === path || !path && pathname === '/',
+        [styles.marginBottom]: marginBottom,
       })}
     >
       <div className={styles.icon}>
