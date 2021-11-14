@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { State } from '../../../store';
 import Titlebar from '../Titlebar';
 import Sidebar from '../Sidebar';
-import Searchbar from '../Toolbar';
+import Toolbar from '../Toolbar';
 
 import AllBooks from '../../../pages/AllBooks';
 
@@ -24,7 +24,7 @@ const MainLayout: React.FC = () => {
     >
       {platform === 'darwin' && (<Titlebar />)}
 
-      <Searchbar />
+      <Toolbar />
 
       <div className={styles.columnLayout}>
         <Sidebar />
