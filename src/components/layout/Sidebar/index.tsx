@@ -23,8 +23,6 @@ const Sidebar: React.FC = () => {
     setSidebarWidth(savedSidebarWidth);
   }, [savedSidebarWidth]);
 
-
-
   return (
     <div
       className={clsx({
