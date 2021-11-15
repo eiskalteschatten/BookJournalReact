@@ -1,8 +1,12 @@
 @import "../../../scss/variables";
 
-.searchbar {
+.toolbar {
   background-color: $sidebarBg;
   color: $sidebarColor;
   padding: 5px;
   text-align: center;
+
+  &.darwin {
+    -webkit-app-region: drag;
+  }
 }

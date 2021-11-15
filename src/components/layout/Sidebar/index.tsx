@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import clsx from 'clsx';
 
 import { State } from '../../../store';
 import SidebarItem from './SidebarItem';
@@ -11,7 +10,6 @@ import styles from './Sidebar.module.scss';
 
 const Sidebar: React.FC = () => {
   const sidebarItems = useItems();
-  const platform = useSelector((state: State) => state.app.platform);
   const savedSidebarWidth = useSelector((state: State) => state.ui.width);
   const [sidebarWidth, setSidebarWidth] = useState<number | undefined>(savedSidebarWidth);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
@@ -22,10 +20,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div
-      className={clsx({
-        [styles.sidebar]: true,
-        [styles.darwin]: platform === 'darwin',
-      })}
+      className={styles.sidebar}
       style={{ flex: `0 0 ${sidebarWidth}px` }}
       ref={sidebarRef}
     >
