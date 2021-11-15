@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { State } from '../../../store';
+import SearchBox from './SearchBox';
 
 import styles from './Toolbar.module.scss';
 
@@ -16,7 +17,11 @@ const Toolbar: React.FC = () => {
         [styles.darwin]: platform === 'darwin',
       })}
     >
-      Toolbar
+      <div>New book</div>
+
+      <SearchBox />
+
+      <div>Settings</div>
     </div>
   );
 };
