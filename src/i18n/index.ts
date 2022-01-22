@@ -7,7 +7,7 @@ i18n
   .use(initReactI18next)
   .init({
     ...defaultConfig,
-    lng: (window as any).app.getLocale(),
+    lng: window.app.getLocale(),
   });
 
 export default i18n;
