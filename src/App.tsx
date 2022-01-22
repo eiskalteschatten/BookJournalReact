@@ -5,13 +5,11 @@ import MainLayout from './components/layout/MainLayout';
 
 const App: React.FC = () => {
   return (
-    <>
-      <HashRouter>
-        <Routes>
-          <Route path='*' element={<MainLayout />} />
-        </Routes>
-      </HashRouter>
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path='*' element={<MainLayout />} />
+      </Routes>
+    </HashRouter>
   );
 };
 
