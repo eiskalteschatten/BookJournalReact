@@ -1,4 +1,4 @@
-import useTranslation from '../../../intl/useTranslation';
+import { useTranslation } from 'react-i18next';
 import { Props as SidebarItemProp } from './SidebarItem';
 
 import { ReactComponent as AllBooks } from '../../../assets/images/si-glyph-bookcase.svg';
@@ -8,39 +8,43 @@ import { ReactComponent as NotReadYet } from '../../../assets/images/si-glyph-bo
 import { ReactComponent as BooksRead } from '../../../assets/images/si-glyph-square-checked.svg';
 import { ReactComponent as Statistics } from '../../../assets/images/si-glyph-chart-piece.svg';
 
-const useItems = (): SidebarItemProp[] => ([
-  {
-    path: '/',
-    ItemIcon: AllBooks,
-    title: useTranslation('sidebarAllBooks'),
-  },
-  {
-    path: '/wishlist',
-    ItemIcon: WishList,
-    title: useTranslation('sidebarWishlist'),
-    marginBottom: true,
-  },
-  {
-    path: '/currently-reading',
-    ItemIcon: CurrentlyReading,
-    title: useTranslation('sidebarCurrentlyReading'),
-  },
-  {
-    path: '/not-read-yet',
-    ItemIcon: NotReadYet,
-    title: useTranslation('sidebarNotReadYet'),
-  },
-  {
-    path: '/books-read',
-    ItemIcon: BooksRead,
-    title: useTranslation('sidebarBooksRead'),
-    marginBottom: true,
-  },
-  {
-    path: '/statistics',
-    ItemIcon: Statistics,
-    title: useTranslation('sidebarStatistics'),
-  },
-]);
+const useItems = (): SidebarItemProp[] => {
+  const { t } = useTranslation(['sidebar']);
+
+  return [
+    {
+      path: '/',
+      ItemIcon: AllBooks,
+      title: t('sidebar:allBooks'),
+    },
+    {
+      path: '/wishlist',
+      ItemIcon: WishList,
+      title: t('sidebar:wishlist'),
+      marginBottom: true,
+    },
+    {
+      path: '/currently-reading',
+      ItemIcon: CurrentlyReading,
+      title: t('sidebar:currentlyReading'),
+    },
+    {
+      path: '/not-read-yet',
+      ItemIcon: NotReadYet,
+      title: t('sidebar:notReadYet'),
+    },
+    {
+      path: '/books-read',
+      ItemIcon: BooksRead,
+      title: t('sidebar:booksRead'),
+      marginBottom: true,
+    },
+    {
+      path: '/statistics',
+      ItemIcon: Statistics,
+      title: t('sidebar:statistics'),
+    },
+  ];
+};
 
 export default useItems;

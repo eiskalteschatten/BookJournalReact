@@ -4,6 +4,7 @@ import log from 'electron-log';
 
 import './eventsFromRenderer';
 import './workers';
+import '../i18n';
 
 import config from '../config/main';
 import openMainWindow from './windows/main';
