@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import 'bootstrap/scss/bootstrap.scss';
 
 import App from './App';
 import store from './store';
 import * as serviceWorker from './serviceWorker';
 import './eventsFromMain';
 
+import './assets/css/reboot.css';
 import './scss/index.scss';
 
 ReactDOM.render(
