@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer, shell } from 'electron';
+import { app, contextBridge, ipcRenderer, shell } from 'electron';
 
 import config from '../config/main';
 
@@ -32,5 +32,6 @@ contextBridge.exposeInMainWorld(
   'app',
   {
     getVersion: () => config.app.version,
+    getLocale: () => app.getLocale(),
   }
 );

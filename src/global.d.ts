@@ -14,6 +14,7 @@ declare global {
     };
     app: {
       getVersion: () => string;
+      getLocale: () => string;
     };
   }
 }
