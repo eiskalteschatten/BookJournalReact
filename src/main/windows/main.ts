@@ -2,6 +2,7 @@ import { BrowserWindow, BrowserWindowConstructorOptions, Menu, nativeTheme, scre
 import path from 'path';
 import log from 'electron-log';
 
+import config from '../../config/main';
 import initializeRenderer from '../initializeRenderer';
 import getAppMenu from '../menus/appMenus/main';
 
@@ -22,7 +23,9 @@ export default async (): Promise<BrowserWindow> => {
       contextIsolation: true,
       preload: path.join(__dirname, '../preload.js'),
     },
-    backgroundColor: nativeTheme.shouldUseDarkColors ? '#111111' : '#f0f0f0',
+    backgroundColor: nativeTheme.shouldUseDarkColors
+      ? config.windows.defaultBackgroundColors.dark
+      : config.windows.defaultBackgroundColors.light,
   };
 
   if (process.platform === 'darwin') {
@@ -49,7 +52,27 @@ export default async (): Promise<BrowserWindow> => {
         : `file://${path.join(__dirname, '../../index.html')}`
     );
 
-    newWindow.on('close', (e: Event) => onClose(e, newWindow));
+    newWindow.on('resized', (e: Event) => onWindowChanged(e, {
+      windowWidth: newWindow.getBounds().width,
+      windowHeight: newWindow.getBounds().height,
+      windowIsMaximized: false,
+    }));
+    newWindow.on('moved', (e: Event) => onWindowChanged(e, {
+      windowX: newWindow.getBounds().x,
+      windowY: newWindow.getBounds().y,
+    }));
+    newWindow.on('maximize', (e: Event) => onWindowChanged(e, {
+      windowIsMaximized: newWindow.isMaximized(),
+    }));
+    newWindow.on('unmaximize', (e: Event) => onWindowChanged(e, {
+      windowIsMaximized: newWindow.isMaximized(),
+    }));
+    newWindow.on('enter-full-screen', (e: Event) => onWindowChanged(e, {
+      windowIsFullScreen: newWindow.isFullScreen(),
+    }));
+    newWindow.on('leave-full-screen', (e: Event) => onWindowChanged(e, {
+      windowIsFullScreen: newWindow.isFullScreen(),
+    }));
     newWindow.on('closed', () => closed(newWindow));
 
     newWindow.webContents.on('did-finish-load', async (): Promise<void> => {
@@ -67,19 +90,38 @@ export default async (): Promise<BrowserWindow> => {
   return newWindow;
 };
 
-const onClose = async (e: Event, window?: BrowserWindow): Promise<void> => {
-  try {
-    // if (window) {
-    //   const windowBounds = window.getBounds();
+interface OnWindowChangedOptions {
+  windowWidth?: number;
+  windowHeight?: number;
+  windowX?: number;
+  windowY?: number;
+  windowIsMaximized?: boolean;
+  windowIsFullScreen?: boolean;
+}
 
-    //   const windowPreferences = {
-    //     windowWidth: windowBounds.width,
-    //     windowHeight: windowBounds.height,
-    //     windowX: windowBounds.x,
-    //     windowY: windowBounds.y,
-    //     windowIsFullScreen: window.isFullScreen(),
-    //     windowIsMaximized: window.isMaximized(),
-    //   };
+const onWindowChanged = async (e: Event, changedPreferences: OnWindowChangedOptions): Promise<void> => {
+  try {
+    // Save the Window preferences here
+    // const windowsRepository = getRepository(Windows);
+    // const preferences = await windowsRepository.findOne({
+    //   where: {
+    //     windowId: WINDOW_ID,
+    //   },
+    // });
+
+    // if (!preferences) {
+    //   await windowsRepository.save({
+    //     windowId: WINDOW_ID,
+    //     ...changedPreferences,
+    //   });
+    // }
+    // else {
+    //   await windowsRepository.update({
+    //     id: preferences.id,
+    //   }, {
+    //     ...preferences,
+    //     ...changedPreferences,
+    //   });
     // }
   }
   catch (error) {
