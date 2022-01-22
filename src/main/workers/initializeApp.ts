@@ -3,7 +3,7 @@ import { ipcMain, IpcMainEvent } from 'electron';
 // import path from 'path';
 import log from 'electron-log';
 
-// import config from '../../config';
+// import config from '../../config/main';
 
 ipcMain.on('initializeApp', async (e: IpcMainEvent): Promise<void> => {
   // if (!fs.existsSync(config.app.storagePath)) {

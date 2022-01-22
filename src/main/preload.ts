@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer, shell } from 'electron';
 
-import config from '../config';
+import config from '../config/main';
 
 contextBridge.exposeInMainWorld(
   'api',

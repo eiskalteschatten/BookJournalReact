@@ -1,6 +1,6 @@
 import { shell } from 'electron';
 
-import config from '../../../../config';
+import config from '../../../../config/main';
 import checkForUpdates from '../../../lib/checkForUpdates';
 import { MenuItem, nonMacPlatforms } from '../../menuBuilder';
 

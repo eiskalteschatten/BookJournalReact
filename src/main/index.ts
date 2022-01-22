@@ -5,7 +5,7 @@ import log from 'electron-log';
 import './eventsFromRenderer';
 import './workers';
 
-import config from '../config';
+import config from '../config/main';
 import openMainWindow from './windows/main';
 import checkForUpdates from './lib/checkForUpdates';
 
