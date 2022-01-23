@@ -2,12 +2,12 @@ import { app } from 'electron';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import defaultConfig from './config';
+import defaulti18nConfig from './config';
 
 i18n
   .use(initReactI18next)
   .init({
-    ...defaultConfig,
+    ...defaulti18nConfig,
     lng: app.getLocale(),
   });
 
