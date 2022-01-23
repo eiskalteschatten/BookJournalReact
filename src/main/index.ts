@@ -4,8 +4,8 @@ import log from 'electron-log';
 
 import './eventsFromRenderer';
 import './workers';
-import '../i18n/main';
 
+import { setupi18n } from '../i18n/main';
 import config from '../config/main';
 import openMainWindow from './windows/main';
 import checkForUpdates from './lib/checkForUpdates';
@@ -44,6 +44,7 @@ export default (_app: Electron.App): void => {
       await installExtension(REDUX_DEVTOOLS);
     }
 
+    setupi18n();
     openMainWindow();
 
     setTimeout(() => checkForUpdates(false), 3000);
