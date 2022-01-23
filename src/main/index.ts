@@ -25,6 +25,8 @@ export default (_app: Electron.App): void => {
   app.on('window-all-closed', onWindowAllClosed);
 
   app.whenReady().then(async (): Promise<void> => {
+    setupi18n();
+
     const initializeAppPath = 'file://' + path.join(__dirname, '/workers/', 'initializeApp.html');
 
     const initializeAppWindow = new BrowserWindow({
@@ -44,7 +46,6 @@ export default (_app: Electron.App): void => {
       await installExtension(REDUX_DEVTOOLS);
     }
 
-    setupi18n();
     openMainWindow();
 
     setTimeout(() => checkForUpdates(false), 3000);
