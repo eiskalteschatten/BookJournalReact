@@ -10,7 +10,7 @@ switch (process.platform) {
     storagePath = path.join(os.homedir(), 'Library', 'Application Support', 'BookJournal');
     break;
   case 'win32':
-    storagePath = path.join(os.homedir(), 'AppData', 'Roaming', 'BookJournal');
+    storagePath = path.join(os.homedir(), 'AppData', 'Roaming', 'bookjournal');
     break;
   default:
     storagePath = path.join(os.homedir(), '.bookjournal');
