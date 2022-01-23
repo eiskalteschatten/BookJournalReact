@@ -24,7 +24,7 @@ export default {
   quit: 'Beenden',
   help: 'Hilfe',
   appOnGitHub: '{{appName}} auf GitHub',
-  submitFeedback: 'Feedback shicken',
+  submitFeedback: 'Feedback schicken',
   aboutAlexSeifert: 'Über Alex Seifert',
   window: 'Fenster',
   view: 'Darstellung',
