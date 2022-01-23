@@ -3,7 +3,7 @@ import { InitOptions } from 'i18next';
 import config from '../config';
 import resources from './locales';
 
-export const defaultConfig: InitOptions = {
+export const defaulti18nConfig: InitOptions = {
   resources,
   defaultNS: 'common',
   fallbackLng: config.intl.defaultLocale,
@@ -13,4 +13,4 @@ export const defaultConfig: InitOptions = {
   debug: process.env.NODE_ENV === 'development',
 };
 
-export default defaultConfig;
+export default defaulti18nConfig;

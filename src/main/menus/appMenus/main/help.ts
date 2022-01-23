@@ -1,9 +1,11 @@
-import { shell } from 'electron';
-import { t } from 'i18next';
+import { app, shell } from 'electron';
 
 import config from '../../../../config';
 import checkForUpdates from '../../../lib/checkForUpdates';
 import { MenuItem, nonMacPlatforms } from '../../menuBuilder';
+import i18n from '../../../../i18n/main';
+
+const { t } = i18n;
 
 export default (): MenuItem => {
   const submenuItems: MenuItem[] = [
@@ -18,6 +20,17 @@ export default (): MenuItem => {
     },
     {
       platforms: nonMacPlatforms,
+      item: { type: 'separator' },
+    },
+    {
+      item: {
+        label: t('common:showLogFiles'),
+        click: (): void => {
+          shell.showItemInFolder(app.getPath('logs'));
+        },
+      },
+    },
+    {
       item: { type: 'separator' },
     },
     {
